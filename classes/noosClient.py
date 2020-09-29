@@ -19,12 +19,12 @@ class NoosClient(discord.Client):
 
         # define command functions here
 
-        async def mFoo(myMessage):
-            print(f'mFoo got triggered by {myMessage}')
+        async def mFoo(myMessageStr):
+            print(f'mFoo got triggered by {myMessageStr}')
             await message.channel.send('bar')
 
-        async def mBar(myMessage):
-            print(f'mBar got triggered by {myMessage}')
+        async def mBar(myMessageStr):
+            print(f'mBar got triggered by {myMessageStr}')
             await message.channel.send('foo')
 
         # map the functions to command strings
@@ -40,4 +40,9 @@ class NoosClient(discord.Client):
         for key in commandDict:
             if key in myMessage:
                 await commandDict[key](myMessage)
-        # then check whether we have to run a command
+
+    async def on_raw_reaction_add(self, payload):
+        pass
+
+    async def on_raw_reaction_remove(self, payload):
+        pass
