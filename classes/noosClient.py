@@ -40,4 +40,3 @@ class NoosClient(discord.Client):
         for key in commandDict:
             if key in myMessage:
                 await commandDict[key](myMessage)
-        # then check whether we have to run a command
