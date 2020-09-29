@@ -27,13 +27,16 @@ class NoosClient(discord.Client):
             print(f'mBar got triggered by {myMessage}')
             await message.channel.send('foo')
 
-        # get the message
-        myMessage = message.content.lower()
-
+        # map the functions to command strings
         commandDict = {
             "foo": mFoo,
             "bar": mBar,
         }
+
+        # get the message
+        myMessage = message.content.lower()
+
+        # check message for defined commands and execute them.
         for key in commandDict:
             if key in myMessage:
                 await commandDict[key](myMessage)
