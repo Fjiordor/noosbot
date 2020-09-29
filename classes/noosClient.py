@@ -19,12 +19,12 @@ class NoosClient(discord.Client):
 
         # define command functions here
 
-        async def mFoo(myMessageStr):
-            print(f'mFoo got triggered by {myMessageStr}')
+        async def mFoo(myMessage):
+            print(f'mFoo got triggered by {myMessage}')
             await message.channel.send('bar')
 
-        async def mBar(myMessageStr):
-            print(f'mBar got triggered by {myMessageStr}')
+        async def mBar(myMessage):
+            print(f'mBar got triggered by {myMessage}')
             await message.channel.send('foo')
 
         # map the functions to command strings
